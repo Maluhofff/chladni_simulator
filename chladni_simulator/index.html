@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+    <!--Cabeçalhos e metadados
+    5-aceita acentos em português
+    10-estilos visuais, parte estética
+    11-body,deixa o fundo preto com letras brancas, centraliza o conteúdo, define altura mínima e remove margens
+    17-flexbox pra centralizar tudo
+    21-a página ocupa pelo menos a altura interia da tela
+    26-caixa de controles, cria a caixinha com bordas sutis e cantos arredondados
+    31-caixa de equações, cria a caixinha com bordas sutis e cantos arredondados, centraliza o texto, define fonte monoespaçada e cor verde
+    54-canvas, cria a tela de desenho com bordas para fazer a simulação
+    o body é a estrutura visual que aprece na tela
+    cria dois sliders para o controle de m e n
+    -->
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de figuras de Chladni</title>
+    <style>
+        body {
+            background-color: rgb(27, 26, 26);
+            color: rgb(5, 228, 79);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .controls {
+            margin-bottom: 15px;
+            background: #0f0f0f;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .math-box {
+            margin-bottom: 15px;
+            background: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #76ff03;
+        }
+        label {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        input[type="range"] {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        canvas {
+            border: 2px solid #5c0606;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulador de figuras de Chladni</h1>
+    <!--identifica os sliders com id, coloca numa label-->
+    <div class="controls">
+        <label for="sliderN">n: <span id="valN">3</span></label>
+        <input type="range" id="sliderN" min="1" max="10" value="3">
+        
+        <label for="sliderM">m: <span id="valM">5</span></label>
+        <input type="range" id="sliderM" min="1" max="10" value="5">
+    </div>
+<!--escreve dinâmincamente as equações , so q está errado-->
+    <div class="math-box" id="mathOutput">
+        Calculando equação...
+    </div>
+<!--Cria a tela "placa" digital onde vai ser desenhado os pixels da simulação-->
+    <canvas id="chladniCanvas" width="400" height="400"></canvas>
+<!--conexão , importa o script -->
+    <script src="script.js"></script>
+</body>
+</html>
