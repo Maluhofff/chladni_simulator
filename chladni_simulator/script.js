@@ -1,7 +1,7 @@
-//Pega os elementos do html pelo id e torna eles em contantes
+
 const canvas = document.getElementById("chladniCanvas");
 const c = canvas.getContext("2d");
-//e canva recebe o contexto 2d , o c
+
 const width = canvas.width;
 const height = canvas.height;
 const L = width;
@@ -65,7 +65,7 @@ function atualizarSomEFisica(n, m) {
                                `Fórmula Atual: cos(${n}&pi;x/L)·cos(${m}&pi;y/L) - cos(${m}&pi;x/L)·cos(${n}&pi;y/L) = 0`;
     }
 }
-
+//Mostra as alterações na nova janela
 function desenha_chladni() {
     if (!sliderN || !sliderM) return;
 
